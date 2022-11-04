@@ -1,67 +1,117 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Slab:wght@400;700&display=swap");
+
+:root {
+  --accent-color: deeppink;
+  --background-color: #131621;
+  --hr: #202639;
+  --font-heading: "Montserrat", sans-serif;
+  --font-paragraph: "Roboto Slab", serif;
+  --font-code: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+}
+/* 
+[data-theme="dark"] {
+  --accent-color: yellow;
+  --background-color: #131621;
+  --hr: #202639;
+} */
+
 body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
+  font-family: var(--font-heading);
+  margin: auto;
+  padding: 20px;
+  max-width: 65ch;
+  text-align: left;
+  background-color: #fff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  background-color: var(--background-color);
+  color: white;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-	color: #222;
+
+body {
+  font-family: var(--font-heading);
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-family: var(--font-paragraph);
+  font-size: 16px;
+  line-height: 28px;
+  margin-block-start: 2rem;
+  margin-block-end: 2rem;
+}
+
+ol,
+ul {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 1rem;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  list-style-position: inside;
+  margin: 24px 0 !important;
+}
+
+li::marker {
+  color: var(--accent-color);
+}
+
+li > p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  display: inline;
+}
+
 a {
-	color: #3273dc;
+  color: var(--accent-color) !important;
+  text-decoration: none;
+  cursor: pointer;
 }
-nav a {
-	margin-right: 10px;
+
+::selection {
+  color: var(--background-color);
+  background: var(--accent-color);
 }
-textarea {
-	width: 100%;
-	font-size: 16px;
+
+body {
+  touch-action: manipulation;
 }
-input {
-	font-size: 16px;
+
+*:focus:not(:focus-visible) {
+  outline: none;
 }
-content {
-	line-height: 1.6;
+
+*:focus-visible:not(input):not(textarea) {
+  outline: none;
+  background-color: var(--accent-color) !important;
+  color: var(--background-color);
+  box-shadow: 0 0 0 4px var(--accent-color);
+  border-radius: 2px;
 }
-table {
-	width: 100%;
+
+path {
+  fill: var(--background-color);
 }
-img {
-	max-width: 100%;
-	height: auto;
-}
-code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
-}
+
 pre {
-	padding: 1rem;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
+  padding: 16px;
+  border-radius: 8px;
 }
