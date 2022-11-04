@@ -14,8 +14,8 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <ul>
       {
         posts.map((post) => (
-          <li class="mb-5">
-            <a class="text-lg font-extrabold block" href={post.url}>
+          <li class="item">
+            <a class="item-title" href={post.url}>
               {post.frontmatter.title}
             </a>
             <time class="text-xs" datetime={post.frontmatter.pubDate}>
@@ -25,10 +25,26 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
                 day: "numeric",
               })}
             </time>
-            <p class="m-0 p-0 block">{post.frontmatter.description}</p>
+            <p class="item-description">{post.frontmatter.description}</p>
           </li>
         ))
       }
     </ul>
   </section>
 </BaseLayout>
+
+<style>
+  .item {
+    margin-bottom: 16px;
+  }
+
+  .item-title {
+    font-weight: 900;
+    display: block;
+    font-size: 32px
+  }
+
+  .item-description {
+    display: block;
+  }
+</style>
