@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-// Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
@@ -9,7 +9,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 );
 ---
 
-<BaseLayout>
+<BaseLayout title={'SITE_TITLE'} description={'SITE_DESCRIPTION'}>
   <section>
     <ul>
       {
@@ -25,7 +25,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
                 day: "numeric",
               })}
             </time>
-            <p class="m-0 p-0">{post.frontmatter.description}</p>
+            <p class="m-0 p-0 block">{post.frontmatter.description}</p>
           </li>
         ))
       }
