@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Spa } from "astro-spa";
+
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
@@ -32,16 +32,6 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       }
     </ul>
   </section>
-  <Spa
-    defaultAnimation={false}
-    progressBarOptions={{
-      height: "4px",
-      secondary: false,
-      colors: {
-        foreground: "deeppink",
-      },
-    }}
-  />
 </BaseLayout>
 
 <style>
