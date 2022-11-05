@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Spa } from "astro-spa";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
@@ -9,7 +10,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 );
 ---
 
-<BaseLayout title={'SITE_TITLE'} description={'SITE_DESCRIPTION'}>
+<BaseLayout title={"SITE_TITLE"} description={"SITE_DESCRIPTION"}>
   <section>
     <ul>
       {
@@ -31,6 +32,16 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       }
     </ul>
   </section>
+  <Spa
+    defaultAnimation={false}
+    progressBarOptions={{
+      height: "4px",
+      secondary: false,
+      colors: {
+        foreground: "deeppink",
+      },
+    }}
+  />
 </BaseLayout>
 
 <style>
@@ -41,7 +52,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   .item-title {
     font-weight: 900;
     display: block;
-    font-size: 32px
+    font-size: 32px;
   }
 
   .item-description {
