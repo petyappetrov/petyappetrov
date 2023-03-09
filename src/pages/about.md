@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/blog-post.astro"
+layout: "../layouts/BlogPost.astro"
 title: "Об авторе"
 description: "Lorem ipsum dolor sit amet"
 ---

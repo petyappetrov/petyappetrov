@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/blog-post.astro"
+layout: "../../layouts/BlogPost.astro"
 title: "Новые функции Next.js 13"
 description: "Next.js - это популярный фреймворк для создания универсальных приложений на React, который помогает разработчикам ускорить разработку и повысить производительность своих приложений."
 pubDate: "March 09 2023"

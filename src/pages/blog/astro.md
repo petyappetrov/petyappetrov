@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/blog-post.astro"
+layout: "../../layouts/BlogPost.astro"
 title: "Немного про Astro"
 description: "Astro - это статический сайтовый генератор, который использует абстрактный синтаксис для создания веб-страниц. Он позволяет создавать динамические сайты, используя статические файлы, такие как HTML, CSS и JavaScript."
 pubDate: "March 08 2023"
