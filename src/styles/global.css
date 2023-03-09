@@ -110,10 +110,6 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
-}
 blockquote,
 q {
   quotes: none;
@@ -132,8 +128,22 @@ table {
 
 :root {
   --accent-color: deeppink;
+  --variable: "dark";
+  --background-color: #fff;
+  --hr: #d0d5e1;
+  --text-color: #000;
+  --font-heading: "Montserrat", sans-serif;
+  --font-paragraph: "Roboto Slab", serif;
+  --font-code: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+}
+
+[data-theme="dark"] {
+  --accent-color: deeppink;
+  --variable: "light";
   --background-color: #131621;
   --hr: #202639;
+  --text-color: #fff;
   --font-heading: "Montserrat", sans-serif;
   --font-paragraph: "Roboto Slab", serif;
   --font-code: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
@@ -157,7 +167,21 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   background-color: var(--background-color);
-  color: white;
+  color: var(--text-color);
+}
+
+hr {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2rem;
+  margin-bottom: calc(2rem - 1px);
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background: var(--hr);
+  height: 1px;
+  border: none;
 }
 
 body {
@@ -177,15 +201,36 @@ h1 {
   font-family: var(--font-heading);
   font-weight: 900;
   font-size: 40px;
-  margin-bottom: 8px;
+  margin-bottom: 0rem;
+  margin-top: 3rem;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 0rem;
+  margin-top: 3rem;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 0rem;
+  margin-top: 3rem;
 }
 
 p {
   font-family: var(--font-paragraph);
   font-size: 16px;
   line-height: 28px;
-  margin-block-start: 2rem;
-  margin-block-end: 2rem;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+strong {
+  font-weight: bold;
 }
 
 ol,
@@ -196,12 +241,13 @@ ul {
   margin-inline-start: 1rem;
   margin-inline-end: 0;
   padding-inline-start: 0;
-  list-style-position: inside;
+  list-style-position: outside;
   margin: 24px 0 !important;
 }
 
 li::marker {
   color: var(--accent-color);
+  font-weight: bold;
 }
 
 li > p {

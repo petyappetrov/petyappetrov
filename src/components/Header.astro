@@ -1,25 +1,72 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
+import HeaderLink from "./header-link.astro";
 import { SITE_TITLE } from "../config";
 ---
 
 <header>
-  <a href="/">
-    <h2 class="font-extrabold text-4xl text-white">
-      {SITE_TITLE}
-    </h2>
-  </a>
-  <nav>
-    <HeaderLink href="/about">Обо мне</HeaderLink>
-  </nav>
+  <div>
+    <a href="/">
+      <h2>
+        {SITE_TITLE}
+      </h2>
+    </a>
+    <nav>
+      <HeaderLink href="/about">Обо мне</HeaderLink>
+    </nav>
+  </div>
+  <button id="theme-toggler"></button>
 </header>
 <style>
   header {
-    margin: 0em 0 2em;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   h2 {
-    margin: 0.5em 0;
-	font-size: 48px;
-	font-weight: 900;
+    margin: 0 0 0.5em 0;
+    font-size: 36px;
+    font-weight: 900;
+  }
+  #theme-toggler {
+    padding-top: 1rem;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 18px;
+    cursor: pointer;
   }
 </style>
+
+<script is:inline>
+  const THEME_ATTR_KEY = "data-theme";
+  const THEME_STORAGE_KEY = "theme";
+  const root = document.documentElement;
+
+  const mediaQueryDark = window.matchMedia("(prefers-color-scheme: dark)");
+  let theme = mediaQueryDark.matches ? "dark" : "light";
+  mediaQueryDark.addEventListener("change", (event) => {
+    theme = event.matches ? "dark" : "light";
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    root.setAttribute(THEME_ATTR_KEY, theme);
+  });
+  const persistedTheme = localStorage.getItem(THEME_STORAGE_KEY) ?? theme;
+  root.setAttribute(THEME_ATTR_KEY, persistedTheme);
+
+  const buttonThemeToggler = document.querySelector("#theme-toggler");
+
+  const handleSetTheme = (theme) => {
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    buttonThemeToggler.textContent = theme === "dark" ? "🌙" : "☀️";
+    root.setAttribute(THEME_ATTR_KEY, theme);
+  };
+
+  buttonThemeToggler.addEventListener("click", () => {
+    const theme =
+      root.getAttribute(THEME_ATTR_KEY) === "dark" ? "light" : "dark";
+
+    handleSetTheme(theme);
+  });
+  buttonThemeToggler.textContent = persistedTheme === "dark" ? "🌙" : "☀️";
+</script>

@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+
+import BaseLayout from "./base-layout.astro";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+    pubDate?: string;
+    updatedDate?: string;
+    heroImage?: string;
+  };
+}
+
+const {
+  content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props;
+---
+
+<BaseLayout>
+  <article>
+    {heroImage && <img width={'100%'} height={360} src={heroImage} alt="" />}
+    <h1 class="title">{title}</h1>
+    {pubDate && <time>{pubDate}</time>}
+    {
+      updatedDate && (
+        <div>
+          Дата публикации: <time>{updatedDate}</time>
+        </div>
+      )
+    }
+    <hr />
+    <slot />
+  </article>
+</BaseLayout>

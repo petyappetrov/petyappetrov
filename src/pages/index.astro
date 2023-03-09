@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/base-layout.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
@@ -19,7 +19,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
             <a class="item-title" href={post.url}>
               {post.frontmatter.title}
             </a>
-            <time class="text-xs" datetime={post.frontmatter.pubDate}>
+            <time datetime={post.frontmatter.pubDate}>
               {new Date(post.frontmatter.pubDate).toLocaleDateString("ru-ru", {
                 year: "numeric",
                 month: "short",
@@ -36,7 +36,8 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 
 <style>
   .item {
-    margin-bottom: 16px;
+    margin-bottom: 3rem;
+    list-style-type: none;
   }
 
   .item-title {
@@ -47,5 +48,9 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 
   .item-description {
     display: block;
+  }
+
+  time {
+    font-size: 14px;
   }
 </style>
