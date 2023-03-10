@@ -144,7 +144,7 @@ table {
 }
 
 [data-theme="dark"] {
-  --accent-color: deeppink;
+  --accent-color: yellow;
   --variable: "light";
   --background-color: #131621;
   --hr: #202639;
