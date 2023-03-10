@@ -37,6 +37,23 @@ import { SITE_TITLE } from "../config";
     font-size: 18px;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 768px) {
+    header {
+      padding-top: 0;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      margin: 0 0 0.5em 0;
+      padding: 0;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    #theme-toggler {
+      padding-top: 0.5rem;
+    }
+  }
 </style>
 
 <script is:inline>

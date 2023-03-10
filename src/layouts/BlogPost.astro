@@ -20,9 +20,19 @@ const {
 
 <BaseLayout>
   <article>
-    {heroImage && <img width={'100%'} height={360} src={heroImage} alt="" />}
+    {heroImage && <img width={"100%"} height={360} src={heroImage} alt="" />}
     <h1 class="title">{title}</h1>
-    {pubDate && <time>{pubDate}</time>}
+    {
+      pubDate && (
+        <time>
+          {new Date(pubDate).toLocaleDateString("ru-ru", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </time>
+      )
+    }
     {
       updatedDate && (
         <div>
