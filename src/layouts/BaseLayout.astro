@@ -10,15 +10,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 <html lang="en">
   <head>
-   
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
   <body>
-    <Header title={SITE_TITLE} />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div id='root'>
+      <Header title={SITE_TITLE} />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
