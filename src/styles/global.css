@@ -288,9 +288,10 @@ path {
 }
 
 pre {
-  padding: 16px;
+  padding: 1.5rem;
   border-radius: 0.7rem;
   font-size: 14px;
+  margin: 0 -1.5rem;
 }
 
 code {
@@ -298,6 +299,10 @@ code {
   background-color: #27212e;
   padding: 1px 4px 3px;
   border-radius: 6px;
+}
+
+pre > code {
+  padding: 0;
 }
 
 body::-webkit-scrollbar {
@@ -318,7 +323,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--accent-color);
+  background-color: var(--hr);
   border-radius: 16px;
   border: 6px solid var(--background-color);
 }
@@ -408,8 +413,8 @@ pre[class*="language-"] ::selection {
 
 /* Properties specific to code blocks */
 pre[class*="language-"] {
-  padding: 1em; /* this is standard */
-  margin: 0.5em 0; /* this is the default */
+  padding: 1.5rem; /* this is standard */
+  margin: 0.5rem -1.5rem; /* this is the default */
   overflow: auto; /* this is standard */
 }
 
