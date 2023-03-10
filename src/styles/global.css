@@ -287,7 +287,18 @@ path {
   fill: var(--background-color);
 }
 
-pre {
-  padding: 16px;
+::-webkit-scrollbar{
+  background-color: transparent;
+  width: 12px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: inherit;
   border-radius: 8px;
+  background-clip: content-box;
+  border: 2px solid transparent;
+}
+body[scroll],
+::-webkit-scrollbar-thumb:hover{
+  transition: 0s;
+  background-color: rgba(0,0,0,.5);
 }
