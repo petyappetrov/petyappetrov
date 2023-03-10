@@ -186,6 +186,8 @@ hr {
 
 body {
   font-family: var(--font-heading);
+  overflow: overlay;
+  background-color: transparent;
 }
 
 * {
