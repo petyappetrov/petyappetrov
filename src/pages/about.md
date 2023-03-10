@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/BlogPost.astro"
-title: "Об авторе"
+title: "👋 Hola!"
 description: "Lorem ipsum dolor sit amet"
 ---
 
@@ -16,5 +16,8 @@ description: "Lorem ipsum dolor sit amet"
 
 По&nbsp;любым вопросам можете написать мне в&nbsp;телеграм или в&nbsp;дискорд. Буду рад общению.
 
+---
+
 - Telegram: [@petyappetrov](https://t.me/petyappetrov)
 - Discord: [petyappetrov#7468](https://discordapp.com/users/341940971270963202)
+- GitHub: [petyappetrov](https://github.com/petyappetrov)
