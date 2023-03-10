@@ -93,6 +93,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -107,13 +108,16 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -121,6 +125,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -149,6 +154,7 @@ table {
   --font-code: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
 }
+
 /* 
 [data-theme="dark"] {
   --accent-color: yellow;
@@ -247,7 +253,7 @@ li::marker {
   font-weight: bold;
 }
 
-li > p {
+li>p {
   margin-block-start: 0;
   margin-block-end: 0;
   display: inline;
@@ -284,24 +290,29 @@ path {
   fill: var(--background-color);
 }
 
+pre {
+  padding: 16px;
+  border-radius: 8px;
+}
+
 body::-webkit-scrollbar {
-  background-color: #fff;
+  background-color: var(--background-color);
   width: 16px;
 }
 
 /* background of the scrollbar except button or resizer */
 body::-webkit-scrollbar-track {
-  background-color: #fff;
+  background-color: var(--background-color);
 }
 
 /* scrollbar itself */
 body::-webkit-scrollbar-thumb {
-  background-color: #babac0;
+  background-color: var(--accent-color);
   border-radius: 16px;
-  border: 4px solid #fff;
+  border: 4px solid var(--background-color);
 }
 
 /* set button(top and bottom of the scrollbar) */
 body::-webkit-scrollbar-button {
-  display:none;
+  display: none;
 }
